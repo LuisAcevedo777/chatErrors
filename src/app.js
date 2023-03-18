@@ -4,8 +4,10 @@ const cors = require('cors')
 const userRouter = require('../routes/user.routes')
 const conversationRouter = require('../routes/conversation.routes')
 const messageRouter = require('../routes/message.routes')
+const authRouter = require('../routes/auth.routes')
 const db = require('../utils/database')
 const initModels = require('../models/initModels')
+
 
 const app = express()
 
@@ -20,6 +22,7 @@ app.use(cors())
 app.use(userRouter)
 app.use(conversationRouter)
 app.use(messageRouter)
+app.use(authRouter)
 
 
 

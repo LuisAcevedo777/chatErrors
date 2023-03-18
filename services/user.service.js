@@ -2,6 +2,18 @@ const User = require('../models/user.model')
 
 class userServices{
 
+static async getUser(email){
+
+try{
+
+const user = await User.findOne({where: {email}})
+return user
+}catch(error){throw error}
+
+}
+
+
+
 static async createUserService(newUser){
 
 try{
