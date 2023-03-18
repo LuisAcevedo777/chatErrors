@@ -4,28 +4,25 @@ const db = require ('../utils/database')
 
 const Conversation = db.define('conversations',{
 
-id: {
+idConversation: {
 type: DataTypes.INTEGER,
 primaryKey: true,
-autoIncrement: true},
+autoIncrement: true,
+field: "id_conversation"},
 
 title: {
 type: DataTypes.STRING(35),
 allowNull: true},
 
-type: {
-type: DataTypes.BOOLEAN,
+typeConversationId: {
+type: DataTypes.INTEGER,
 allowNull: true,
-defaultValue: true
+field: "type_conversation_id",
+unique: false
 },
-userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: "user_id"
-    }
 
 },
     
-{timestamps: true})
+{timestamps: false})
 
 module.exports = Conversation

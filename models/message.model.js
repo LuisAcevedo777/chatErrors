@@ -4,26 +4,34 @@ const db = require ('../utils/database')
 
 const Message = db.define('messages',{
 
-id: {
+idMessage: {
 type: DataTypes.INTEGER,
 primaryKey: true,
-autoIncrement: true},
+autoIncrement: true,
+field: "id_message"},
 
 content: {
 type: DataTypes.TEXT,
 allowNull: true},
 
-conversationIdMessage: {
-type: DataTypes.INTEGER,
-allowNull: false,
-field: "conversation_id_message"
-},
-userIdMessage: {
+  typeIdMessage: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: "type_id_message"
+        },
+
+idUserMessage: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    field: "user_id_message"
-    }},
+    field: "id_user_message"
+    },
+    idMessageConversation: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: "id_message_conversation"
+        },
+},
     
-    {timestamps: true})
+    {timestamps: false})
 
 module.exports = Message

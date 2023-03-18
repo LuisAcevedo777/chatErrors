@@ -23,6 +23,7 @@ app.use(messageRouter)
 
 
 
+
 db.authenticate()
 .then(()=>{console.log('conexion autenticada')}).catch((error)=>{console.log(error)})
 

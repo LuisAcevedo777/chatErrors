@@ -7,7 +7,7 @@ class messageServices{
     static async createMessagesService(createMessageBody){
     
     try{
-    const messageCreated = await Conversation.create(createMessageBody)
+    const messageCreated = await Message.create(createMessageBody)
     return messageCreated}
     catch(error){throw error}}
 }

@@ -4,14 +4,15 @@ const db = require('../utils/database')
 
 const User = db.define('users', {
 
-    id: {
+    idUser: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
+        field: "id_user"
     },
 
     username: {
-        type: DataTypes.STRING(35),
+        type: DataTypes.STRING(30),
         allowNull: false
     },
 
@@ -35,6 +36,6 @@ const User = db.define('users', {
 
 },
     
-{timestamps: true})
+{timestamps:false})
 
 module.exports = User

@@ -6,7 +6,7 @@ const createMessages = async (req, res)=> {
 
     try{
     
-        const createMessageBody = req.params
+        const createMessageBody = req.body
     const dataCreateMessage = await messageServices.createMessagesService(createMessageBody)
     res.status(201).json(dataCreateMessage)}
     
