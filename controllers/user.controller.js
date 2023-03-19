@@ -1,6 +1,6 @@
 const userServices = require('../services/user.service')
 
-const createUser = async (req, res)=> {
+const createUser = async (req, res, next)=> {
 
 try{
 
@@ -8,11 +8,11 @@ try{
 const data = await userServices.createUserService(newUser)
 res.status(201).json(data)}
 
-catch(error){res.status(400).json(error)}
+catch(error){next(error)}          //{res.status(400).json(error)}
 
 }
 
-const getOneUser = async (req, res)=> {
+const getOneUser = async (req, res, next)=> {
 
     try{
       
@@ -20,18 +20,18 @@ const getOneUser = async (req, res)=> {
     const dataUser = await userServices.getOneUserService(id)
     res.json(dataUser)}
     
-    catch(error){res.status(400).json(error)}
+    catch(error){next(error)}   //{res.status(400).json(error)}
     
     }
 
-    const getAllUsers = async (req, res)=> {
+    const getAllUsers = async (req, res, next)=> {
 
         try{
         
         const dataUsers = await userServices.getAllUsersService()
         res.json(dataUsers)}
         
-        catch(error){res.status(400).json(error)}
+        catch(error){next(error)}   //{res.status(400).json(error)}
         
         }
 

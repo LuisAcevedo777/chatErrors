@@ -3,6 +3,7 @@ const validateResult = require('../utils/validate')
 
 const createUserValidator =[
 
+    
 check('username', 'Error con el nombre de Usuario')
 .exists()
 .withMessage('El usuario debe existir')
